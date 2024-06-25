@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +32,11 @@
     transform: rotate(360deg);
   }
 }
+
+/* Home */
+#home-top {
+  display: flex;
+  justify-content: center;
+  background-color: lightskyblue
+}
+
