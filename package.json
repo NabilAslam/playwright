@@ -38,6 +38,7 @@
   "devDependencies": {
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.14.8",
+    "prettier": "^3.0.0-alpha.6",
     "react-router-dom": "^6.23.1"
   }
 }
