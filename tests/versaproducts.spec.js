@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 
-test("versaproducts", async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto("https://www.versacommerce.de/");
   await page.getByRole("link", { name: "Login" }).click();
 
@@ -11,12 +11,15 @@ test("versaproducts", async ({ page }) => {
     .locator("input[name='password']")
     .pressSequentially("55555", { delay: 90 });
   await page.getByRole("button", { name: "Login" }).click();
+});
 
+
+  test("products", async ({ page }) => {
   await page.getByRole("link", { name: "󰓼 Products" }).click();
   await page.getByRole("link", { name: "All products" }).click();
   await page.getByRole("link", { name: "Add product" }).click();
 
-  
+
   await page.getByPlaceholder('e.g. Raincoat').pressSequentially('The Legend of Zelda Artbook', {delay: 50});
   await page.getByRole('paragraph').first().click();
   await page.locator('.rx-content').pressSequentially('The Legend of Zelda Artbook', {delay: 50});

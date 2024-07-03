@@ -11,11 +11,11 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  globalTimeout: 60000,
+  globalTimeout: 120000,
   timeout: 60000,
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -23,7 +23,8 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html', { open: 'always' }]],
+  // reporter: [['html', { open: 'always' }]],
+  reporter: [['list', { printSteps: true }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -33,7 +34,7 @@ module.exports = defineConfig({
     trace: 'on',
     video: {
       mode: 'on',
-      size: { width: 2560, height: 1080 }
+      size: { width: 1920, height: 1080 }
     },
     screenshot: 'on',
 
