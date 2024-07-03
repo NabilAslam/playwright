@@ -1,3 +1,11 @@
+Testbericht erzeugen lassen wenn der test mindestens einen fehler hatte:
+
+- Für Björn z.B.
+- liste mit allen fehlern
+- dateien die betroffen sind z.B. bilder und videos
+- der pfad wo man sich die fehler ansehen kann
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
